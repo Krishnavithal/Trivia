@@ -12,39 +12,15 @@ export default function RouteComponent() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <div className="grid-container">
-            <header>
-              <a href="/">TRIVIA QUIZ</a>
-            </header>
-            <main>
-              <div className="content">
-                <div className="main">
-                  <Login
-                    userName={userName}
-                    handleChange={(a) => {
-                      setUserName(a);
-                    }}
-                  ></Login>
-                </div>
-              </div>
-            </main>
-            <footer>All rights reserved.</footer>
-          </div>
+          <Login
+            userName={userName}
+            handleChange={(a) => {
+              setUserName(a);
+            }}
+          ></Login>
         </Route>
-        <Route path="/questions">
-          <div className="grid-container">
-            <header>
-              <a href="/">TRIVIA QUIZ</a>
-            </header>
-            <main>
-              <div className="content">
-                <div className="main">
-                  <Question userName={userName} />
-                </div>
-              </div>
-            </main>
-            <footer>All rights reserved.</footer>
-          </div>
+        <Route exact path="/questions">
+          <Question userName={userName} />
         </Route>
       </Switch>
     </Router>
