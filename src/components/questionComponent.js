@@ -21,7 +21,7 @@ class Question extends Component {
   };
   check = () => {
     let temp = localStorage.getItem("name");
-    if (temp == null) {
+    if (temp === null || temp === "") {
       const { history } = this.props;
       history.push("/");
     }
@@ -90,7 +90,8 @@ class Question extends Component {
             response={this.state.responses}
             restart={() => {
               console.log("restart");
-              this.componentDidMount();
+              //this.componentDidMount();
+              window.location.reload();
             }}
           />
         ) : null}

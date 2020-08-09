@@ -47,10 +47,10 @@ class Result extends Component {
           type="button"
           className="start-again-quiz-btn btns"
           onClick={() => {
-             const { history } = this.props;
+            //const { history } = this.props;
             // console.log("clicked");
-             history.push("/questions");
-            //this.props.restart();
+            //history.push("/questions");
+            this.props.restart();
             //window.location.reload();
           }}
         >
