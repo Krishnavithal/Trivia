@@ -43,19 +43,19 @@ class Result extends Component {
           Wrong: <span className="total-wrong">{5 - this.props.score}</span>
         </h4>
         {/* <h4>Percentage: <span className="total-percentage">33.33%</span></h4> */}
-        <button
+        {/* <button
           type="button"
           className="start-again-quiz-btn btns"
           onClick={() => {
             //const { history } = this.props;
             // console.log("clicked");
             //history.push("/questions");
-            this.props.restart();
-            //window.location.reload();
+            //this.props.restart();
+            window.location.reload();
           }}
         >
           Start Again
-        </button>
+        </button> */}
         <button
           type="button"
           className="go-home-btn btns"
