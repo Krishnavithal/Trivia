@@ -1,11 +1,11 @@
 import React from "react";
+//import Question from "./components/questionComponent";
+//import Login from "./components/login";
+import RouteComponent from "./components/routeComponent";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
-  );
+  console.log("from app.js");
+  return <RouteComponent />;
 }
 
 export default App;
