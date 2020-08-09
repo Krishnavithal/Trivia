@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/style.css";
 import QuestionBox from "./questionBox";
-import Result from "./resultComponent";
+//import Result from "./resultComponent";
 
 class Question extends Component {
   state = { questionBank: [], score: 0, responses: 0, index: 0 };
@@ -19,6 +19,7 @@ class Question extends Component {
     this.setState({ score: 0, responses: 0 });
   };
   getQuestions = () => {
+    console.log("get questions");
     fetch(
       "https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple"
     )
@@ -26,7 +27,9 @@ class Question extends Component {
       .then((result) => {
         console.log(result);
         //result.replace(/(&quot\;)/g, '"');
-        this.setState({ questionBank: result.results });
+        this.setState({ questionBank: result.results }, () => {
+          console.log(this.state);
+        });
       });
     //   .then(
     //     this.state.questionBank.map(({ question }) =>
@@ -50,27 +53,57 @@ class Question extends Component {
       //console.log(question)}
     });
     return (
-      <div className="container">
-        <div className="title">
-          QUIZ{" "}
-          <span style={{ float: "right" }}>
-            Hi {localStorage.getItem("name")}
-          </span>
+      //   <div className="container">
+      //     <div className="title">
+      //       QUIZ{" "}
+      //       <span style={{ float: "right" }}>
+      //         Hi {localStorage.getItem("name")}
+      //       </span>
+      //     </div>
+      //     {this.state.questionBank.length > 0 && this.state.responses < 5 && (
+      //       //   this.state.questionBank.map(
+      //       //     ({ question, incorrect_answers, correct_answer }) => (
+      //       //       <QuestionBox
+      //       //         question={question}
+      //       //         incorrect={incorrect_answers}
+      //       //         correct={correct_answer}
+      //       //         selected={(answer) =>
+      //       //           this.computeAnswer(answer, correct_answer)
+      //       //         }
+      //       //       />
+      //       //     )
+      //       //   )
+      //       <QuestionBox
+      //         question={this.state.questionBank[this.state.index].question}
+      //         incorrect={
+      //           this.state.questionBank[this.state.index].incorrect_answers
+      //         }
+      //         correct={this.state.questionBank[this.state.index].correct_answer}
+      //         selected={(answer) =>
+      //           this.computeAnswer(
+      //             answer,
+      //             this.state.questionBank[this.state.index].correct_answer
+      //           )
+      //         }
+      //       />
+      //     )}
+      //     {this.state.responses === 5 ? (
+      //       <Result score={this.state.score} playAgain={this.playAgain} />
+      //     ) : null}
+      //   </div>
+
+      <div className="quiz-box custom-box" style={{ marginBottom: "100%" }}>
+        <div className="stats">
+          <div className="score-board" style={{ color: "red" }}>
+            <span className="score-text">
+              Hi {localStorage.getItem("name")}
+            </span>
+            <span className="correct-answers"></span>
+          </div>
         </div>
-        {this.state.questionBank.length > 0 && this.state.responses < 5 && (
-          //   this.state.questionBank.map(
-          //     ({ question, incorrect_answers, correct_answer }) => (
-          //       <QuestionBox
-          //         question={question}
-          //         incorrect={incorrect_answers}
-          //         correct={correct_answer}
-          //         selected={(answer) =>
-          //           this.computeAnswer(answer, correct_answer)
-          //         }
-          //       />
-          //     )
-          //   )
+        {this.state.questionBank.length > 0 && (
           <QuestionBox
+            qno={this.state.index}
             question={this.state.questionBank[this.state.index].question}
             incorrect={
               this.state.questionBank[this.state.index].incorrect_answers
@@ -84,9 +117,18 @@ class Question extends Component {
             }
           />
         )}
-        {this.state.responses === 5 ? (
-          <Result score={this.state.score} playAgain={this.playAgain} />
-        ) : null}
+
+        <div className="next-question">
+          {this.state.responses === 5 ? (
+            <button type="button" className="see-result-btn btns">
+              See Your Result
+            </button>
+          ) : (
+            <button type="button" className="next-question-btn btns">
+              Next Question
+            </button>
+          )}
+        </div>
       </div>
     );
   }
