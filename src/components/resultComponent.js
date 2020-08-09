@@ -60,6 +60,7 @@ class Result extends Component {
           type="button"
           className="go-home-btn btns"
           onClick={() => {
+            localStorage.clear();
             const { history } = this.props;
             history.push("/");
           }}
