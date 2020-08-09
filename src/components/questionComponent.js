@@ -46,7 +46,7 @@ class Question extends Component {
   render() {
     console.log("from questionComponent.js");
     console.log(this.props);
-    this.state.questionBank.map((item) => {
+    this.state.questionBank.forEach((item) => {
       item.question = item.question.replace(/(&quot;)/g, '"');
       item.question = item.question.replace(/&#039;/g, "'");
       item.question = item.question.replace(/&rsquo;/g, "’");
