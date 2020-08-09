@@ -46,6 +46,7 @@ class Question extends Component {
       item.question = item.question.replace(/&rsquo;/g, "’");
       item.question = item.question.replace(/&lsquo;/g, "‘");
       item.question = item.question.replace(/&amp;/g, "&");
+      //return item;
       //console.log(question)}
     });
     return (

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../styles/style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { withRouter } from "react-router-dom";
-import RouteComponent from "./routeComponent";
 
 class Login extends Component {
   state = { userName: "", disable: true };
