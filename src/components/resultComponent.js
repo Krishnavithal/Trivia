@@ -51,7 +51,7 @@ class Result extends Component {
             // console.log("clicked");
             // history.push("/questions");
             //this.props.restart();
-            window.location.reload(false);
+            window.location.reload();
           }}
         >
           Start Again

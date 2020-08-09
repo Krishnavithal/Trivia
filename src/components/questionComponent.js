@@ -21,7 +21,7 @@ class Question extends Component {
   };
   check = () => {
     let temp = localStorage.getItem("name");
-    if (temp.length < 1) {
+    if (temp == null) {
       const { history } = this.props;
       history.push("/");
     }
