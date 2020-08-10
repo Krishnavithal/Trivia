@@ -1,33 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hosted/Application URL: https://distracted-galileo-fadff1.netlify.app
 
-## Available Scripts
+# Trivia Quiz Application
+Basic quiz application that consists 5 questions and reslut is given at the end.
 
-In the project directory, you can run:
+## Frameworks Used
+1. React
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Teachnologies
+1. HTML5<br/>
+2. CSS3<br/>
+3. ReactJS
 
 ### libraries added
 
-bootstrap: It is used for applying styling to the application.<br/>
-react-router-dom: It is used for handling routes between components.<br/>
+1. bootstrap: It is used for applying styling to the application.<br/>
+2. react-router-dom: It is used for handling routes between components.<br/>
 
-### `npm run build`
+## Steps to run:
+1. Clone the repository.
+2. Run the command 'npm install' to install all the dependencies.
+3. Run the command 'npm run start' to start the development server.
+4. Browser will automatically be opened with our application.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## STEPS TO BUILD. 
+1. Clone the repository.
+2. Run the command 'npm install' to install all the dependencies.
+3. Run the command 'npm run build' to build the project.
+4. 'public' folder will be created.
+5. Deploy this folder on any platform and it will serve the application.
 
 ### deployment
 
-This application is deployed on [netlify](https://www.netlify.com).<br/>
+This application is deployed on [netlify](https://www.netlify.com) platform.<br/>
 
 ### deployedURL
 
